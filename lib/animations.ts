@@ -150,7 +150,7 @@ export const revealUp: Variants = {
     scale: 1,
     transition: {
       duration: 0.8,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -163,7 +163,7 @@ export const revealLeft: Variants = {
     scale: 1,
     transition: {
       duration: 0.8,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -176,7 +176,7 @@ export const revealRight: Variants = {
     scale: 1,
     transition: {
       duration: 0.8,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -218,7 +218,7 @@ export const slideInUp: Variants = {
     opacity: 1,
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -230,7 +230,7 @@ export const slideInDown: Variants = {
     opacity: 1,
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -242,7 +242,7 @@ export const zoomIn: Variants = {
     opacity: 1,
     transition: {
       duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -254,7 +254,7 @@ export const zoomOut: Variants = {
     opacity: 1,
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -413,7 +413,7 @@ export const morphIn: Variants = {
     scale: 1,
     transition: {
       duration: 0.8,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };

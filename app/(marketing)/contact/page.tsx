@@ -57,7 +57,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
 export default function ContactPage() {
@@ -101,7 +101,7 @@ export default function ContactPage() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
             className="text-center relative z-10"
           >
             <motion.h1
@@ -367,7 +367,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
             className="mt-16"
           >
             <motion.div

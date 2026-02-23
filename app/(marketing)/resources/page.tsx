@@ -163,7 +163,7 @@ export default function ResourcesPage() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
             className="text-center relative z-10"
           >
             <motion.h1 
@@ -224,7 +224,7 @@ export default function ResourcesPage() {
                   hidden: { opacity: 0, y: 40 },
                   visible: { opacity: 1, y: 0 },
                 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
               >
                 <Card className="bg-white dark:bg-dark-300 border-0 shadow-xl dark:shadow-dark-lg card-hover text-center h-full">
                   <motion.div 
@@ -314,7 +314,7 @@ export default function ResourcesPage() {
                   hidden: { opacity: 0, y: 50, scale: 0.9 },
                   visible: { opacity: 1, y: 0, scale: 1 },
                 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
               >
                 <Card className={`bg-white dark:bg-dark-300 border-0 shadow-xl dark:shadow-dark-lg card-hover h-full overflow-hidden ${resource.featured ? 'ring-4 ring-accent-gold dark:ring-accent-gold/50' : ''}`}>
                   <div className="relative h-48 overflow-hidden image-hover-zoom">

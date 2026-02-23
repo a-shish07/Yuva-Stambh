@@ -120,7 +120,7 @@ export default function VolunteerPage() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
             className="text-center relative z-10"
           >
             <motion.h1 
@@ -191,7 +191,7 @@ export default function VolunteerPage() {
                   hidden: { opacity: 0, y: 50, scale: 0.9 },
                   visible: { opacity: 1, y: 0, scale: 1 },
                 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
               >
                 <Card className="bg-white dark:bg-dark-300 border-0 shadow-xl dark:shadow-dark-lg card-hover h-full">
                   <motion.div 
@@ -276,7 +276,7 @@ export default function VolunteerPage() {
                   hidden: { opacity: 0, y: 40 },
                   visible: { opacity: 1, y: 0 },
                 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
               >
                 <div className="text-center">
                   <motion.div 
@@ -338,7 +338,7 @@ export default function VolunteerPage() {
                     hidden: { opacity: 0, x: -50 },
                     visible: { opacity: 1, x: 0 },
                   }}
-                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
                   className="relative flex gap-6"
                 >
                   <div className="flex-shrink-0">
@@ -402,7 +402,7 @@ export default function VolunteerPage() {
                   hidden: { opacity: 0, y: 40 },
                   visible: { opacity: 1, y: 0 },
                 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
               >
                 <Card className="bg-background-light dark:bg-dark-400 border-0 shadow-xl dark:shadow-dark-lg card-hover h-full">
                   <Heart className="w-12 h-12 text-primary dark:text-accent-gold mb-4 opacity-50" />
