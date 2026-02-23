@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { BookOpen, FileText, Video, Download, ExternalLink, Search, TrendingUp, Users, Lightbulb } from 'lucide-react';
+import { BookOpen, FileText, Video, Download, ExternalLink, Search, TrendingUp, Users, Lightbulb, Clock } from 'lucide-react';
 import { Container } from '@/components/common/Container';
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { Card } from '@/components/ui/Card';
