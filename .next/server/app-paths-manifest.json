@@ -1,0 +1,7 @@
+{
+  "/(marketing)/about/page": "app/(marketing)/about/page.js",
+  "/(marketing)/page": "app/(marketing)/page.js",
+  "/(marketing)/get-involved/page": "app/(marketing)/get-involved/page.js",
+  "/(marketing)/gallery/page": "app/(marketing)/gallery/page.js",
+  "/(marketing)/contact/page": "app/(marketing)/contact/page.js"
+}
