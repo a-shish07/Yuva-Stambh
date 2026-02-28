@@ -307,11 +307,35 @@ export default function DonatePage() {
                   Have questions about donating? We&apos;re here to help!
                 </p>
                 <a
-                  href="mailto:donate@yuvastambh.org"
+                  href="mailto:yuvastambh@gmail.com"
                   className="text-accent-gold font-semibold hover:underline"
                 >
-                  donate@yuvastambh.org
+                  yuvastambh@gmail.com
                 </a>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-lg p-6">
+                <h3 className="font-playfair text-xl font-bold mb-4 text-background-dark">
+                  Bank Transfer Details
+                </h3>
+                <div className="space-y-4 text-sm text-gray-600">
+                  <div>
+                    <p className="font-bold text-background-dark">Account Name:</p>
+                    <p>Yuvastambh Welfare Association Chandigarh</p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-background-dark">Account Number:</p>
+                    <p className="font-mono">33780100011291</p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-background-dark">IFSC Code:</p>
+                    <p className="font-mono">BARB0GRAINM</p>
+                    <p className="text-[10px] italic">(Fifth character is zero)</p>
+                  </div>
+                  <p className="text-xs pt-2 border-t border-gray-100">
+                    Please share your transfer screenshot and PAN details to yuvastambh@gmail.com for the 80G receipt.
+                  </p>
+                </div>
               </div>
 
               <div className="bg-white rounded-2xl shadow-lg p-6">
@@ -319,10 +343,9 @@ export default function DonatePage() {
                   Other Ways to Give
                 </h3>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Bank Transfer</li>
                   <li>• Cheque/DD</li>
                   <li>• Corporate CSR</li>
-                  <li>• In-kind Donation</li>
+                  <li>• In-kind Donation (Books/Clothes)</li>
                 </ul>
               </div>
             </motion.div>

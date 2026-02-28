@@ -15,82 +15,64 @@ const values = [
   {
     icon: Target,
     title: 'Mission',
-    description: 'To empower youth through education, skill development, and leadership training to create sustainable social impact in underserved communities across India.',
+    description: 'To bridge educational and skill gaps among underprivileged children and youth through quality education, skill enhancement, and sustainable livelihood support.',
   },
   {
     icon: Eye,
     title: 'Vision',
-    description: 'A future where every young person has the opportunity to reach their full potential and become a pillar of positive change in their community.',
+    description: 'To create long-term, measurable social impact and contribute meaningfully to inclusive development through community-driven social empowerment.',
   },
   {
     icon: Heart,
-    title: 'Values',
-    description: 'Integrity, empowerment, sustainability, inclusivity, and transparency guide everything we do.',
+    title: 'Certification',
+    description: 'Yuvastambh is formally registered and holds 12A and 80G certifications, making us eligible for CSR partnerships and tax-exempt donations.',
   },
   {
     icon: Users,
-    title: 'Approach',
-    description: 'Community-led, youth-focused programs that create lasting impact through education, livelihood, and advocacy.',
+    title: 'Focus',
+    description: 'Concentrating on quality education, life-skills development, and confidence building for underprivileged children and youth.',
   },
 ];
 
 const timeline = [
   {
-    year: '2015',
-    title: 'Foundation',
-    description: 'Yuvastambh was founded with a vision to empower youth in rural India through education and skill development.',
-  },
-  {
     year: '2017',
-    title: 'First 1000',
-    description: 'Reached our first milestone of empowering 1,000 youth across 20 villages in Maharashtra.',
-  },
-  {
-    year: '2019',
-    title: 'Expansion',
-    description: 'Expanded programs to 5 states, launching livelihood and entrepreneurship initiatives.',
+    title: 'Foundation',
+    description: 'Founded by Mr. Upender Maurya with a dedication to community development and youth empowerment.',
   },
   {
     year: '2021',
-    title: 'Digital Transformation',
-    description: 'Launched online learning platforms, reaching 5,000+ youth during the pandemic.',
+    title: 'Formal Registration',
+    description: 'Yuvastambh was formally registered as an NGO, strengthening its legal and social framework.',
+  },
+  {
+    year: '2021',
+    title: 'Certification',
+    description: 'Obtained 12A and 80G certifications, enabling CSR partnerships and tax-exempt contributions.',
+  },
+  {
+    year: '2022',
+    title: 'Evening School of Excellence',
+    description: 'Launched our flagship initiative to ensure learning continues beyond regular school hours.',
   },
   {
     year: '2023',
-    title: '10,000+ Lives',
-    description: 'Crossed the milestone of empowering 10,000+ youth with sustainable skills and opportunities.',
+    title: 'Raddi Se Library',
+    description: 'Pioneered the "Raddi Se Library" initiative, collecting 10,000+ books to promote reading habits.',
   },
   {
-    year: '2025',
-    title: 'Future Forward',
-    description: 'Committed to empowering 50,000 youth by 2030 with enhanced programs and partnerships.',
+    year: 'Current',
+    title: 'Growing Impact',
+    description: 'Reaching hundreds of students and women through Gyaan Shakti, E-Shiksha, and Project Pankh.',
   },
 ];
 
 const team = [
   {
-    name: 'Dr. Rajesh Kumar',
-    role: 'Founder & CEO',
+    name: 'Mr. Upender Maurya',
+    role: 'Founder & President',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400',
-    bio: '15+ years in social development',
-  },
-  {
-    name: 'Priya Sharma',
-    role: 'Director of Programs',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400',
-    bio: 'Expert in youth empowerment',
-  },
-  {
-    name: 'Amit Patel',
-    role: 'Head of Operations',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400',
-    bio: 'Strategic operations leader',
-  },
-  {
-    name: 'Sneha Reddy',
-    role: 'Community Engagement',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400',
-    bio: 'Community development specialist',
+    bio: 'BA Graduate, MSW candidate, and dedicated social worker since 2017.',
   },
 ];
 
@@ -190,7 +172,7 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              The Pillar of Youth – Building sustainable communities through youth empowerment since 2015
+              The Pillar of Youth – Building sustainable communities through youth empowerment since 2017
             </motion.p>
           </motion.div>
         </Container>
@@ -342,9 +324,9 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-3 gap-12"
           >
-            <StatCounter value="2015" label="Year Founded" />
-            <StatCounter value="120+" label="Villages Reached" />
-            <StatCounter value="10,000+" label="Lives Transformed" />
+            <StatCounter value="2017" label="Year Founded" />
+            <StatCounter value="10,000+" label="Books Collected" />
+            <StatCounter value="1,000+" label="Lives Impacted" />
           </motion.div>
         </Container>
       </section>

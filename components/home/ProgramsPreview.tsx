@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Briefcase, Megaphone, ArrowRight } from 'lucide-react';
+import { BookOpen, Briefcase, Megaphone, ArrowRight, Heart, Sparkles } from 'lucide-react';
 import { Container } from '@/components/common/Container';
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { staggerContainer, staggerItem } from '@/lib/animations';
@@ -19,6 +19,13 @@ const programs = [
     href: '/programs/education',
   },
   {
+    icon: Heart,
+    title: 'Health',
+    description: 'Providing accessible healthcare services and promoting wellness in communities.',
+    image: 'https://images.unsplash.com/photo-1505751172107-5739a00723a5?w=800',
+    href: '/programs/health',
+  },
+  {
     icon: Briefcase,
     title: 'Livelihood',
     description: 'Creating sustainable livelihood opportunities through entrepreneurship training.',
@@ -26,11 +33,11 @@ const programs = [
     href: '/programs/livelihood',
   },
   {
-    icon: Megaphone,
-    title: 'Advocacy',
-    description: 'Empowering youth to become advocates for social change in their communities.',
+    icon: Sparkles,
+    title: 'Women Empowerment',
+    description: 'Empowering women through skill development and leadership training.',
     image: 'https://images.unsplash.com/photo-1573164574511-73c773193279?w=800',
-    href: '/programs/advocacy',
+    href: '/programs/women-empowerment',
   },
 ];
 
@@ -52,7 +59,7 @@ export function ProgramsPreview() {
           initial="hidden"
           animate={controls}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {programs.map((program, index) => (
             <motion.div key={index} variants={staggerItem}>

@@ -12,26 +12,26 @@ const impactStats = [
   {
     icon: Users,
     value: '10,000+',
-    label: 'Lives Transformed',
-    description: 'Youth empowered with skills and opportunities',
+    label: 'Books Collected',
+    description: 'Promoting reading habits through "Raddi Se Library"',
   },
   {
     icon: GraduationCap,
-    value: '500+',
-    label: 'Training Programs',
-    description: 'Conducted across education and livelihood',
-  },
-  {
-    icon: Heart,
-    value: '120+',
-    label: 'Villages Reached',
-    description: 'Communities impacted across 5 states',
+    value: '1,000+',
+    label: 'Students Educated',
+    description: 'Across Evening School, Gyaan Shakti, and E-Shiksha',
   },
   {
     icon: TrendingUp,
-    value: '85%',
-    label: 'Success Rate',
-    description: 'Beneficiaries with sustained improvement',
+    value: '120+',
+    label: 'Students Employed',
+    description: 'Career-ready youth through digital empowerment',
+  },
+  {
+    icon: Heart,
+    value: '3,000+',
+    label: 'Hygiene Support',
+    description: 'Sanitary pads distributed yearly through Project Pankh',
   },
 ];
 

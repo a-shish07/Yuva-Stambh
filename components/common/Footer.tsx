@@ -57,7 +57,7 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 text-primary" />
-                <span>123 Main Street, Mumbai, India</span>
+                <span>Chandigarh, India</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <Phone className="w-5 h-5 text-primary" />
@@ -65,7 +65,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <Mail className="w-5 h-5 text-primary" />
-                <span>info@yuvastambh.org</span>
+                <span>yuvastambh@gmail.com</span>
               </div>
             </div>
           </div>

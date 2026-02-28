@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Briefcase, Megaphone, ArrowRight, Users, Award } from 'lucide-react';
+import { BookOpen, Briefcase, Megaphone, ArrowRight, Users, Award, Heart, Sparkles } from 'lucide-react';
 import { Container } from '@/components/common/Container';
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { Button } from '@/components/common/Button';
@@ -28,6 +28,23 @@ const programs = [
     ],
   },
   {
+    slug: 'health',
+    icon: Heart,
+    title: 'Health & Wellness',
+    description: 'Providing accessible healthcare services and promoting wellness in underserved communities.',
+    image: 'https://images.unsplash.com/photo-1505751172107-5739a00723a5?w=1200',
+    stats: [
+      { label: 'Patients Treated', value: '25,000+' },
+      { label: 'Health Camps', value: '150+' },
+    ],
+    highlights: [
+      'Mobile health clinics',
+      'Preventive healthcare',
+      'Maternal & child health',
+      'Wellness workshops',
+    ],
+  },
+  {
     slug: 'livelihood',
     icon: Briefcase,
     title: 'Livelihood & Entrepreneurship',
@@ -45,20 +62,20 @@ const programs = [
     ],
   },
   {
-    slug: 'advocacy',
-    icon: Megaphone,
-    title: 'Advocacy & Leadership',
-    description: 'Empowering youth to become advocates for social change and community leaders.',
+    slug: 'women-empowerment',
+    icon: Sparkles,
+    title: 'Women Empowerment',
+    description: 'Empowering women through skill development, financial independence, and leadership training.',
     image: 'https://images.unsplash.com/photo-1573164574511-73c773193279?w=1200',
     stats: [
-      { label: 'Youth Leaders', value: '300+' },
-      { label: 'Campaigns Run', value: '50+' },
+      { label: 'Women Empowered', value: '15,000+' },
+      { label: 'Self-Help Groups', value: '250+' },
     ],
     highlights: [
-      'Leadership training',
-      'Social advocacy campaigns',
-      'Community mobilization',
-      'Policy engagement',
+      'Vocational training',
+      'Self-help groups',
+      'Rights & advocacy',
+      'Leadership modules',
     ],
   },
 ];

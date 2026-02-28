@@ -29,24 +29,28 @@ const opportunities = [
     icon: Users,
     title: 'Become a Volunteer',
     description: 'Join our team of passionate volunteers and make a direct impact in communities.',
+    href: '/get-involved/volunteers-internships',
     benefits: ['Skill development', 'Networking', 'Certificate', 'Impact stories'],
   },
   {
     icon: Heart,
     title: 'Monthly Donor',
     description: 'Support our mission with regular contributions and track your impact.',
+    href: '/get-involved/individual-support',
     benefits: ['Tax benefits', 'Impact reports', 'Priority updates', 'Recognition'],
   },
   {
     icon: Briefcase,
     title: 'Corporate Partnership',
     description: 'Partner with us for CSR initiatives and employee engagement programs.',
+    href: '/get-involved/corporate-partnerships',
     benefits: ['CSR alignment', 'Brand visibility', 'Employee engagement', 'Impact metrics'],
   },
   {
     icon: Calendar,
     title: 'Organize Events',
     description: 'Host fundraising events or awareness campaigns in your community.',
+    href: '/get-involved/school-partnerships',
     benefits: ['Event support', 'Marketing materials', 'Media coverage', 'Community impact'],
   },
 ];
@@ -164,6 +168,9 @@ export default function GetInvolvedPage() {
                         </motion.li>
                       ))}
                     </ul>
+                    <Button href={opportunity.href} variant="ghost" className="!px-0 !py-0 text-primary dark:text-accent-gold hover:bg-transparent">
+                      Explore this path
+                    </Button>
                   </Card>
                 </motion.div>
               ))}

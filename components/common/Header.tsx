@@ -8,19 +8,40 @@ import { Menu, X, ChevronDown, Moon, Sun } from 'lucide-react';
 import { Button } from './Button';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/contexts/ThemeContext';
+import { campaignItems } from '@/lib/community-data';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
+  { href: '/about', label: 'About Us' },
   {
-    label: 'Programs',
+    label: 'Our Work',
     submenu: [
       { href: '/programs/education', label: 'Education' },
+      { href: '/programs/health', label: 'Health' },
       { href: '/programs/livelihood', label: 'Livelihood' },
-      { href: '/programs/advocacy', label: 'Advocacy' },
+      { href: '/programs/women-empowerment', label: 'Women Empowerment' },
     ],
   },
-  { href: '/get-involved', label: 'Get Involved' },
+  {
+    label: 'Campaigns',
+    submenu: [
+      { href: '/campaigns', label: 'All Campaigns' },
+      ...campaignItems.map(item => ({
+        href: item.href,
+        label: item.title
+      }))
+    ],
+  },
+  {
+    label: 'Get Involved',
+    submenu: [
+      { href: '/get-involved', label: 'Overview' },
+      { href: '/get-involved/individual-support', label: 'Individual Support' },
+      { href: '/get-involved/corporate-partnerships', label: 'Corporate Partnerships' },
+      { href: '/get-involved/school-partnerships', label: 'School Partnerships' },
+      { href: '/get-involved/volunteers-internships', label: 'Volunteers & Internships' },
+    ],
+  },
   { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -105,7 +126,7 @@ export function Header() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
-                        className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-dark-200 rounded-lg shadow-xl dark:shadow-dark-lg py-2"
+                        className="absolute top-full left-0 mt-2 w-72 bg-white dark:bg-dark-200 rounded-lg shadow-xl dark:shadow-dark-lg py-2"
                       >
                         {link.submenu.map((item) => (
                           <Link
