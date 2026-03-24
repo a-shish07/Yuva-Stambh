@@ -74,6 +74,7 @@ const itemVariants = {
 
 export default function GetInvolvedPage() {
   const [showSuccess, setShowSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
@@ -85,11 +86,35 @@ export default function GetInvolvedPage() {
   });
 
   const onSubmit = async (data: VolunteerFormData) => {
-    await new Promise((resolve) => setTimeout(resolve, 1500)); // Simulate API
-    console.log('Volunteer data:', data);
-    setShowSuccess(true);
-    reset();
-    setTimeout(() => setShowSuccess(false), 5000);
+    setSubmitError(null);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          subject: `Volunteer Registration: ${data.interest}`,
+          message: `Interest: ${data.interest}\nCity: ${data.city}\nAvailability: ${data.availability}\nExperience: ${data.experience || 'N/A'}\nMessage: ${data.message || 'N/A'}`,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit registration');
+      }
+
+      setShowSuccess(true);
+      reset();
+      setTimeout(() => setShowSuccess(false), 5000);
+    } catch (error: any) {
+      console.error('Volunteer form error:', error);
+      setSubmitError(error.message || 'Something went wrong. Please try again later.');
+    }
   };
 
   return (
@@ -414,6 +439,30 @@ export default function GetInvolvedPage() {
                     </AnimatePresence>
                   </Button>
                 </motion.div>
+                <AnimatePresence>
+                  {showSuccess && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-xl p-4 flex items-center gap-3 mt-4"
+                    >
+                      <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
+                      <p className="text-green-800 dark:text-green-200">Thank you! Your application has been submitted.</p>
+                    </motion.div>
+                  )}
+                  {submitError && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-xl p-4 flex items-center gap-3 mt-4"
+                    >
+                      <div className="w-5 h-5 text-red-600 dark:text-red-400">⚠️</div>
+                      <p className="text-red-800 dark:text-red-200">{submitError}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </form>
             </motion.div>
 
@@ -468,10 +517,10 @@ export default function GetInvolvedPage() {
                     We&apos;re here to help! Reach out to our volunteer coordinator for any queries.
                   </p>
                   <a
-                    href="mailto:volunteer@yuvastambh.org"
+                    href="mailto:yuvastambhwelfareassociation@gmail.com"
                     className="text-accent-gold font-semibold hover:underline inline-flex items-center gap-2"
                   >
-                    volunteer@yuvastambh.org
+                    yuvastambhwelfareassociation@gmail.com
                   </a>
                 </div>
               </motion.div>

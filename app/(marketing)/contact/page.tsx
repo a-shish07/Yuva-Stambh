@@ -24,7 +24,10 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    details: ['info@yuvastambh.org', 'support@yuvastambh.org'],
+    details: [
+      { label: 'Primary', email: 'yuvastambhwelfareassociation@gmail.com' },
+      { label: 'Support', email: 'support@yuvastambh.org' },
+    ],
   },
   {
     icon: Phone,
@@ -62,6 +65,7 @@ const itemVariants = {
 
 export default function ContactPage() {
   const [showSuccess, setShowSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
@@ -73,12 +77,29 @@ export default function ContactPage() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log('Contact form data:', data);
-    setShowSuccess(true);
-    reset();
-    setTimeout(() => setShowSuccess(false), 5000);
+    setSubmitError(null);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message');
+      }
+
+      setShowSuccess(true);
+      reset();
+      setTimeout(() => setShowSuccess(false), 5000);
+    } catch (error: any) {
+      console.error('Contact form error:', error);
+      setSubmitError(error.message || 'Something went wrong. Please try again later.');
+    }
   };
 
   return (
@@ -318,11 +339,23 @@ export default function ContactPage() {
                     <h3 className="font-semibold text-lg mb-2 text-background-dark dark:text-white">
                       {info.title}
                     </h3>
-                    {info.details.map((detail, i) => (
-                      <p key={i} className="text-gray-600 dark:text-gray-300">
-                        {detail}
-                      </p>
-                    ))}
+                    {Array.isArray(info.details) && typeof info.details[0] === 'object' ? (
+                      info.details.map((detail: any, i: number) => (
+                        <a
+                          key={i}
+                          href={`mailto:${detail.email}`}
+                          className="block text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-accent-gold transition-colors"
+                        >
+                          {detail.email}
+                        </a>
+                      ))
+                    ) : (
+                      (info.details as string[]).map((detail, i) => (
+                        <p key={i} className="text-gray-600 dark:text-gray-300">
+                          {detail}
+                        </p>
+                      ))
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -356,6 +389,17 @@ export default function ContactPage() {
                   >
                     <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
                     <p className="text-green-800 dark:text-green-200">Thank you! We'll get back to you soon.</p>
+                  </motion.div>
+                )}
+                {submitError && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    className="bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-xl p-4 flex items-center gap-3"
+                  >
+                    <div className="w-5 h-5 text-red-600 dark:text-red-400">⚠️</div>
+                    <p className="text-red-800 dark:text-red-200">{submitError}</p>
                   </motion.div>
                 )}
               </AnimatePresence>

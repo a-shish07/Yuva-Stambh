@@ -307,10 +307,10 @@ export default function DonatePage() {
                   Have questions about donating? We&apos;re here to help!
                 </p>
                 <a
-                  href="mailto:yuvastambh@gmail.com"
+                  href="mailto:yuvastambhwelfareassociation@gmail.com"
                   className="text-accent-gold font-semibold hover:underline"
                 >
-                  yuvastambh@gmail.com
+                  yuvastambhwelfareassociation@gmail.com
                 </a>
               </div>
 
@@ -333,7 +333,7 @@ export default function DonatePage() {
                     <p className="text-[10px] italic">(Fifth character is zero)</p>
                   </div>
                   <p className="text-xs pt-2 border-t border-gray-100">
-                    Please share your transfer screenshot and PAN details to yuvastambh@gmail.com for the 80G receipt.
+                    Please share your transfer screenshot and PAN details to yuvastambhwelfareassociation@gmail.com for the 80G receipt.
                   </p>
                 </div>
               </div>
