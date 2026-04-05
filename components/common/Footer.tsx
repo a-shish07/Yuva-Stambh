@@ -24,6 +24,8 @@ const footerLinks = {
   'Legal': [
     { href: '/privacy', label: 'Privacy Policy' },
     { href: '/terms', label: 'Terms of Service' },
+    { href: '/refund-policy', label: 'Refund & Cancellation' },
+    { href: '/shipping-policy', label: 'Shipping & Delivery' },
   ],
 };
 
@@ -57,7 +59,7 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 text-primary" />
-                <span>Chandigarh, India</span>
+                <span>622 Manglam Electronic Market, Jaipur, Rajasthan 302001</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <Phone className="w-5 h-5 text-primary" />

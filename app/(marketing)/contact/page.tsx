@@ -37,7 +37,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Address',
-    details: ['123 Main Street', 'Mumbai, Maharashtra 400001', 'India'],
+    details: ['622 Manglam Electronic Market', 'Jaipur, Rajasthan 302001', 'India'],
   },
   {
     icon: Clock,

@@ -11,6 +11,12 @@ import { Button } from '@/components/common/Button';
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { fadeUp } from '@/lib/animations';
 
+declare global {
+  interface Window {
+    Razorpay: any;
+  }
+}
+
 const donationSchema = z.object({
   amount: z.number().min(1, 'Amount must be at least ₹1'),
   frequency: z.enum(['one-time', 'monthly']),
@@ -51,8 +57,57 @@ export default function DonatePage() {
   });
 
   const onSubmit = async (data: DonationFormData) => {
-    console.log('Donation data:', data);
-    alert('Payment integration would be initiated here (Razorpay/Stripe)');
+    try {
+      const response = await fetch('/api/razorpay', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: data.amount,
+        }),
+      });
+
+      const order = await response.json();
+
+      if (!order.id) {
+        throw new Error('Failed to create order');
+      }
+
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+        amount: order.amount,
+        currency: order.currency,
+        name: 'Yuvastambh',
+        description: `Donation by ${data.name}`,
+        image: '/yuvastambh-logo.png',
+        order_id: order.id,
+        handler: function (response: any) {
+          alert(`Payment successful! ID: ${response.razorpay_payment_id}`);
+          console.log('Payment Success:', response);
+          // Here you could redirect to a success page or call another API to verify payment
+        },
+        prefill: {
+          name: data.name,
+          email: data.email,
+          contact: data.phone,
+        },
+        notes: {
+          address: 'Yuvastambh Office',
+          pan: data.pan || 'N/A',
+          message: data.message || 'N/A',
+        },
+        theme: {
+          color: '#081813', // primary color
+        },
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    } catch (error: any) {
+      console.error('Payment Error:', error);
+      alert('Something went wrong. Please try again later.');
+    }
   };
 
   const handleAmountSelect = (amount: number) => {
@@ -152,7 +207,7 @@ export default function DonatePage() {
                       placeholder="Enter custom amount"
                       value={customAmount}
                       onChange={(e) => handleCustomAmount(e.target.value)}
-                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors text-black"
                     />
                     {errors.amount && (
                       <p className="text-red-500 text-sm mt-2">{errors.amount.message}</p>
@@ -179,7 +234,7 @@ export default function DonatePage() {
                         {...register('name')}
                         type="text"
                         placeholder="John Doe"
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors text-black"
                       />
                       {errors.name && (
                         <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
@@ -194,7 +249,7 @@ export default function DonatePage() {
                         {...register('email')}
                         type="email"
                         placeholder="john@example.com"
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors text-black"
                       />
                       {errors.email && (
                         <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
@@ -209,7 +264,7 @@ export default function DonatePage() {
                         {...register('phone')}
                         type="tel"
                         placeholder="+91 98765 43210"
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors text-black"
                       />
                       {errors.phone && (
                         <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
@@ -224,7 +279,7 @@ export default function DonatePage() {
                         {...register('pan')}
                         type="text"
                         placeholder="ABCDE1234F"
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors text-black"
                       />
                     </div>
                   </div>
@@ -237,7 +292,7 @@ export default function DonatePage() {
                       {...register('message')}
                       rows={4}
                       placeholder="Share why you're supporting Yuvastambh..."
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors resize-none"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors resize-none text-black"
                     />
                   </div>
 

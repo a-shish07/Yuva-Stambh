@@ -3,50 +3,114 @@ import { Container } from '@/components/common/Container';
 
 export default function PrivacyPage() {
   return (
-    <div className="pt-20 bg-background-light">
+    <div className="pt-20 bg-background-light dark:bg-dark-400 transition-colors duration-300">
       <section className="section-padding">
         <Container size="md">
-          <div className="prose prose-lg max-w-none">
-            <h1>Privacy Policy</h1>
-            <p className="lead">Last updated: February 2026</p>
+          <div className="prose prose-lg dark:prose-invert max-w-none">
+            <h1 className="text-4xl font-playfair font-bold mb-8">Privacy Statement</h1>
+            
+            <hr className="my-8" />
 
-            <h2>1. Information We Collect</h2>
+            <h2 className="text-2xl font-bold mt-8 mb-4">SECTION 1 - WHAT DO WE DO WITH YOUR INFORMATION?</h2>
             <p>
-              We collect information you provide directly to us, including name, email address, phone number,
-              and payment information when you donate or volunteer.
+              When you purchase something from our store, as part of the buying and selling process, we collect the personal information you give us such as your name, address and email address.
+            </p>
+            <p>
+              When you browse our store, we also automatically receive your computer’s internet protocol (IP) address in order to provide us with information that helps us learn about your browser and operating system.
+            </p>
+            <p>
+              Email marketing (if applicable): With your permission, we may send you emails about our store, new products and other updates.
             </p>
 
-            <h2>2. How We Use Your Information</h2>
-            <p>We use the information we collect to:</p>
-            <ul>
-              <li>Process donations and provide tax receipts</li>
-              <li>Send updates about our programs and impact</li>
-              <li>Respond to your inquiries and requests</li>
-              <li>Improve our services and website</li>
-            </ul>
-
-            <h2>3. Information Sharing</h2>
+            <h2 className="text-2xl font-bold mt-8 mb-4">SECTION 2 - CONSENT</h2>
+            <h3 className="text-xl font-semibold mt-6 mb-2">How do you get my consent?</h3>
             <p>
-              We do not sell, trade, or rent your personal information to third parties. We may share
-              information with service providers who assist us in operating our website and conducting our operations.
+              When you provide us with personal information to complete a transaction, verify your credit card, place an order, arrange for a delivery or return a purchase, we imply that you consent to our collecting it and using it for that specific reason only.
+            </p>
+            <p>
+              If we ask for your personal information for a secondary reason, like marketing, we will either ask you directly for your expressed consent, or provide you with an opportunity to say no.
             </p>
 
-            <h2>4. Security</h2>
+            <h3 className="text-xl font-semibold mt-6 mb-2">How do I withdraw my consent?</h3>
             <p>
-              We implement appropriate security measures to protect your personal information. All payment
-              transactions are processed through secure, PCI-compliant payment gateways.
+              If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at anytime, by contacting us at <strong>yuvastambhwelfareassociation@gmail.com</strong> or mailing us at: <strong>622 Manglam Electronic Market Jaipur Rajasthan India 302001</strong>
             </p>
 
-            <h2>5. Your Rights</h2>
+            <h2 className="text-2xl font-bold mt-8 mb-4">SECTION 3 - DISCLOSURE</h2>
             <p>
-              You have the right to access, update, or delete your personal information. Contact us at
-              privacy@yuvastambh.org to exercise these rights.
+              We may disclose your personal information if we are required by law to do so or if you violate our Terms of Service.
             </p>
 
-            <h2>6. Contact Us</h2>
+            <h2 className="text-2xl font-bold mt-8 mb-4">SECTION 4 - PAYMENT</h2>
             <p>
-              If you have any questions about this Privacy Policy, please contact us at privacy@yuvastambh.org.
+              We use Razorpay for processing payments. We/Razorpay do not store your card data on their servers. The data is encrypted through the Payment Card Industry Data Security Standard (PCI-DSS) when processing payment. Your purchase transaction data is only used as long as is necessary to complete your purchase transaction. After that is complete, your purchase transaction information is not saved.
             </p>
+            <p>
+              Our payment gateway adheres to the standards set by PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, MasterCard, American Express and Discover.
+            </p>
+            <p>
+              PCI-DSS requirements help ensure the secure handling of credit card information by our store and its service providers.
+            </p>
+            <p>
+              For more insight, you may also want to read terms and conditions of razorpay on <a href="https://razorpay.com" target="_blank" rel="noopener noreferrer">https://razorpay.com</a>
+            </p>
+
+            <h2 className="text-2xl font-bold mt-8 mb-4">SECTION 5 - THIRD-PARTY SERVICES</h2>
+            <p>
+              In general, the third-party providers used by us will only collect, use and disclose your information to the extent necessary to allow them to perform the services they provide to us.
+            </p>
+            <p>
+              However, certain third-party service providers, such as payment gateways and other payment transaction processors, have their own privacy policies in respect to the information we are required to provide to them for your purchase-related transactions.
+            </p>
+            <p>
+              For these providers, we recommend that you read their privacy policies so you can understand the manner in which your personal information will be handled by these providers.
+            </p>
+            <p>
+              In particular, remember that certain providers may be located in or have facilities that are located a different jurisdiction than either you or us. So if you elect to proceed with a transaction that involves the services of a third-party service provider, then your information may become subject to the laws of the jurisdiction(s) in which that service provider or its facilities are located.
+            </p>
+            <p>
+              Once you leave our store’s website or are redirected to a third-party website or application, you are no longer governed by this Privacy Policy or our website’s Terms of Service.
+            </p>
+
+            <h3 className="text-xl font-semibold mt-6 mb-2">Links</h3>
+            <p>
+              When you click on links on our store, they may direct you away from our site. We are not responsible for the privacy practices of other sites and encourage you to read their privacy statements.
+            </p>
+
+            <h2 className="text-2xl font-bold mt-8 mb-4">SECTION 6 - SECURITY</h2>
+            <p>
+              To protect your personal information, we take reasonable precautions and follow industry best practices to make sure it is not inappropriately lost, misused, accessed, disclosed, altered or destroyed.
+            </p>
+
+            <h2 className="text-2xl font-bold mt-8 mb-4">SECTION 7 - COOKIES</h2>
+            <p>
+              We use cookies to maintain session of your user. It is not used to personally identify you on other websites.
+            </p>
+
+            <h2 className="text-2xl font-bold mt-8 mb-4">SECTION 8 - AGE OF CONSENT</h2>
+            <p>
+              By using this site, you represent that you are at least the age of majority in your state or province of residence, or that you are the age of majority in your state or province of residence and you have given us your consent to allow any of your minor dependents to use this site.
+            </p>
+
+            <h2 className="text-2xl font-bold mt-8 mb-4">SECTION 9 - CHANGES TO THIS PRIVACY POLICY</h2>
+            <p>
+              We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it.
+            </p>
+            <p>
+              If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.
+            </p>
+
+            <h2 className="text-2xl font-bold mt-8 mb-4">QUESTIONS AND CONTACT INFORMATION</h2>
+            <p>
+              If you would like to: access, correct, amend or delete any personal information we have about you, register a complaint, or simply want more information contact our Privacy Compliance Officer at <strong>yuvastambhwelfareassociation@gmail.com</strong> or by mail at <strong>622 Manglam Electronic Market Jaipur Rajasthan India 302001</strong>
+            </p>
+            
+            <p className="mt-8">
+              [Re: Privacy Compliance Officer]<br />
+              [622 Manglam Electronic Market Jaipur Rajasthan India 302001]
+            </p>
+
+            <hr className="my-8" />
           </div>
         </Container>
       </section>
