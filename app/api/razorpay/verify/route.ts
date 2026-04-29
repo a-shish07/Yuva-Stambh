@@ -11,13 +11,17 @@ export async function POST(req: Request) {
       razorpay_signature,
     } = await req.json();
 
+    if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
+      return NextResponse.json(
+        { error: 'Missing required payment verification details' },
+        { status: 400 }
+      );
+    }
+
     const keySecret = process.env.RAZORPAY_KEY_SECRET;
 
     if (!keySecret) {
-      return NextResponse.json(
-        { error: 'Razorpay key secret is not configured' },
-        { status: 500 }
-      );
+      throw new Error('Razorpay key secret is not configured');
     }
 
     const body = razorpay_order_id + '|' + razorpay_payment_id;
