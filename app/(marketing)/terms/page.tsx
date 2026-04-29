@@ -58,7 +58,7 @@ export default function TermsPage() {
             </p>
             <p>
               <strong>Email:</strong> yuvastambhwelfareassociation@gmail.com<br />
-              <strong>Address:</strong> 622 Manglam Electronic Market, Jaipur, Rajasthan 302001
+              <strong>Address:</strong> Valmiki dharmshala sector 26  Chandigarh
             </p>
           </div>
         </Container>

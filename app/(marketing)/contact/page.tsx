@@ -32,12 +32,12 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Phone',
-    details: ['+91 123 456 7890', '+91 098 765 4321'],
+    details: [' +911724583134'],
   },
   {
     icon: MapPin,
     title: 'Address',
-    details: ['622 Manglam Electronic Market', 'Jaipur, Rajasthan 302001', 'India'],
+    details: ['Valmiki dharmshala sector 26', ' Chandigarh', 'India'],
   },
   {
     icon: Clock,

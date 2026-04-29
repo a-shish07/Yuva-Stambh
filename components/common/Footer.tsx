@@ -59,11 +59,11 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 text-primary" />
-                <span>622 Manglam Electronic Market, Jaipur, Rajasthan 302001</span>
+                <span>Valmiki dharmshala sector 26  Chandigarh</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <Phone className="w-5 h-5 text-primary" />
-                <span>+91 123 456 7890</span>
+                <span>+911724583134</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <Mail className="w-5 h-5 text-primary" />

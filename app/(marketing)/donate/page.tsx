@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -40,6 +41,7 @@ const impactExamples = [
 ];
 
 export default function DonatePage() {
+  const router = useRouter();
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
   const [customAmount, setCustomAmount] = useState('');
   const [frequency, setFrequency] = useState<'one-time' | 'monthly'>('one-time');
@@ -55,6 +57,33 @@ export default function DonatePage() {
       frequency: 'one-time',
     },
   });
+
+  const verifyPayment = async (response: any) => {
+    try {
+      const res = await fetch('/api/razorpay/verify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          razorpay_order_id: response.razorpay_order_id,
+          razorpay_payment_id: response.razorpay_payment_id,
+          razorpay_signature: response.razorpay_signature,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        router.push('/donate/success');
+      } else {
+        alert('Payment verification failed. Please contact support.');
+      }
+    } catch (error) {
+      console.error('Verification Error:', error);
+      alert('Something went wrong during verification.');
+    }
+  };
 
   const onSubmit = async (data: DonationFormData) => {
     try {
@@ -83,9 +112,7 @@ export default function DonatePage() {
         image: '/yuvastambh-logo.png',
         order_id: order.id,
         handler: function (response: any) {
-          alert(`Payment successful! ID: ${response.razorpay_payment_id}`);
-          console.log('Payment Success:', response);
-          // Here you could redirect to a success page or call another API to verify payment
+          verifyPayment(response);
         },
         prefill: {
           name: data.name,
