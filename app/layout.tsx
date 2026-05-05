@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: 'Yuvastambh',
     images: [
       {
-        url: '/logo.png',
+        url: 'https://yuvastambh.org.in/logo.png',
         width: 1200,
         height: 630,
         alt: 'Yuvastambh Logo',
