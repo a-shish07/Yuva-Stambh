@@ -109,7 +109,7 @@ export default function DonatePage() {
         currency: order.currency,
         name: 'Yuvastambh',
         description: `Donation by ${data.name}`,
-        image: '/yuvastambh-logo.png',
+        image: '/yuvastambh-logo.svg',
         order_id: order.id,
         handler: function (response: any) {
           verifyPayment(response);

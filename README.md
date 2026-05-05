@@ -133,7 +133,7 @@ Required environment variables (see `.env.example`):
 
 Replace placeholder images in:
 - `/public/images/` - Static images
-- `/public/yuvastambh-logo.png` - Logo
+- `/public/yuvastambh-logo.svg` - Logo
 - Update Unsplash URLs in components with actual images
 
 ### Content

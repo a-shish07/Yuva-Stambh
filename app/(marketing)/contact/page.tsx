@@ -419,7 +419,7 @@ export default function ContactPage() {
               className="bg-white dark:bg-dark-300 rounded-3xl shadow-2xl dark:shadow-dark-lg overflow-hidden h-96 border-4 border-transparent gradient-border-animated group"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.9377578374267!2d72.82772631490169!3d19.01687658711881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cec9c3c9e5cf%3A0x1b4c4c4c4c4c4c4c!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890123"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.126046700547!2d76.81298137578207!3d30.719510686481747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fec922d56a735%3A0x889895c89839446f!2sValmiki%20Dharamsala!5e0!3m2!1sen!2sin!4v1714891150493!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

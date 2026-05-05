@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Youtube } from 'lucide-react';
 
 const footerLinks = {
   'Quick Links': [
@@ -30,10 +30,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
-  { href: 'https://twitter.com', icon: Twitter, label: 'Twitter' },
-  { href: 'https://instagram.com', icon: Instagram, label: 'Instagram' },
-  { href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
+  { href: 'https://www.facebook.com/share/1DyVWFiEEB/', icon: Facebook, label: 'Facebook' },
+  { href: 'https://youtube.com/@yuvastambhngo?si=j8r2y4eJF0kZrIb0', icon: Youtube, label: 'YouTube' },
+  { href: 'https://www.instagram.com/yuvastambh?igsh=NXpjaWVnZHRuMDU2', icon: Instagram, label: 'Instagram' },
+  { href: 'https://www.linkedin.com/in/yuva-stambh-ngo-b39355319?utm_source=share_via&utm_content=profile&utm_medium=member_android', icon: Linkedin, label: 'LinkedIn' },
 ];
 
 export function Footer() {

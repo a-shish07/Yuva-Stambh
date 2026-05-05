@@ -41,6 +41,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: '/yuvastambh-logo.svg',
+    shortcut: '/yuvastambh-logo.svg',
+    apple: '/yuvastambh-logo.svg',
+  },
 };
 
 export default function RootLayout({
