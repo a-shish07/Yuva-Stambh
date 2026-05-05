@@ -194,7 +194,7 @@ This project is private and proprietary to Yuvastambh NGO.
 
 ## Support
 
-For questions or issues, contact: support@yuvastambh.org
+For questions or issues, contact: support@yuvastambh.org.in
 
 ---
 

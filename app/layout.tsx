@@ -20,6 +20,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://yuvastambh.org.in'),
   title: 'Yuvastambh - The Pillar of Youth | Empowering Communities',
   description: 'Yuvastambh empowers youth across India through education, livelihood, and advocacy programs. Join us in transforming futures and building sustainable communities.',
   keywords: ['NGO', 'youth empowerment', 'education', 'livelihood', 'India', 'social impact', 'community development'],
@@ -27,24 +28,36 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://yuvastambh.org',
+    url: 'https://yuvastambh.org.in',
     title: 'Yuvastambh - The Pillar of Youth',
     description: 'Empowering youth to build sustainable communities across India.',
     siteName: 'Yuvastambh',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Yuvastambh Logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Yuvastambh - The Pillar of Youth',
     description: 'Empowering youth to build sustainable communities across India.',
+    images: ['/logo.png'],
   },
   robots: {
     index: true,
     follow: true,
   },
   icons: {
-    icon: '/yuvastambh-logo.svg',
-    shortcut: '/yuvastambh-logo.svg',
-    apple: '/yuvastambh-logo.svg',
+    icon: [
+      { url: '/yuvastambh-logo.svg', type: 'image/svg+xml' },
+      { url: '/logo.png', type: 'image/png' },
+    ],
+    shortcut: '/logo.png',
+    apple: '/logo.png',
   },
 };
 

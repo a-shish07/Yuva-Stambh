@@ -26,7 +26,7 @@ const contactInfo = [
     title: 'Email',
     details: [
       { label: 'Primary', email: 'yuvastambhwelfareassociation@gmail.com' },
-      { label: 'Support', email: 'support@yuvastambh.org' },
+      { label: 'Support', email: 'support@yuvastambh.org.in' },
     ],
   },
   {
