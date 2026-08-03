@@ -71,7 +71,7 @@ const team = [
   {
     name: 'Mr. Upender Maurya',
     role: 'Founder & President',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400',
+    image: '/founder.jpeg',
     bio: 'BA Graduate, MSW candidate, and dedicated social worker since 2017.',
   },
 ];

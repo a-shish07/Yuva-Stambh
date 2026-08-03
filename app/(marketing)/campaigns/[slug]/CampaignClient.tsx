@@ -41,50 +41,86 @@ export default function CampaignClient({ campaign, related }: { campaign: any, r
 
   return (
     <div className="pt-20 bg-background-light dark:bg-dark-400 transition-colors duration-300 min-h-screen">
-      <section
-        className="relative overflow-hidden text-white py-24 md:py-40"
-        style={{
-          backgroundImage: `linear-gradient(rgba(8, 24, 19, 0.7), rgba(8, 24, 19, 0.8)), url(${campaign.image})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
+     <section className="relative overflow-hidden text-white py-24 md:py-40">
+
+  {/* Background */}
+  {campaign.video ? (
+    <iframe
+      src={campaign.video}
+      title={campaign.title}
+      className="absolute inset-0 w-full h-full scale-[1.4] pointer-events-none"
+      frameBorder="0"
+      allow="autoplay; encrypted-media"
+      allowFullScreen
+    />
+  ) : (
+    <div
+      className="absolute inset-0"
+      style={{
+        backgroundImage: `url(${campaign.image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    />
+  )}
+
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black/60" />
+
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 0.15 }}
+    className="absolute inset-0 pattern-grid"
+  />
+
+  <Container className="relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="max-w-4xl"
+    >
+      <Link
+        href="/campaigns"
+        className="inline-flex items-center gap-2 text-accent-gold hover:translate-x-[-4px] transition-transform mb-8 font-medium"
       >
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.15 }}
-          className="absolute inset-0 pattern-grid" 
-        />
-        <Container className="relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-4xl"
-          >
-            <Link href="/campaigns" className="inline-flex items-center gap-2 text-accent-gold hover:translate-x-[-4px] transition-transform mb-8 font-medium">
-              <ArrowLeft className="w-5 h-5" />
-              Back to all campaigns
-            </Link>
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="h-1 w-24 bg-accent-gold mb-8 origin-left"
-            />
-            <h1 className="heading-xl mb-6 text-glow-gold leading-tight">{campaign.title}</h1>
-            <p className="text-xl md:text-3xl text-white/90 mb-8 font-playfair italic">{campaign.subtitle}</p>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/donate" variant="gold" size="lg" className="rounded-full px-8">
-                Support Now
-              </Button>
-              <Button href="#details" variant="outline" size="lg" className="rounded-full px-8 border-white text-white hover:bg-white hover:text-background-dark">
-                Learn More
-              </Button>
-            </div>
-          </motion.div>
-        </Container>
-      </section>
+        <ArrowLeft className="w-5 h-5" />
+        Back to all campaigns
+      </Link>
+
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="h-1 w-24 bg-accent-gold mb-8 origin-left"
+      />
+
+      <h1 className="heading-xl mb-6 text-glow-gold leading-tight">
+        {campaign.title}
+      </h1>
+
+      <p className="text-xl md:text-3xl text-white/90 mb-8 font-playfair italic">
+        {campaign.subtitle}
+      </p>
+
+      <div className="flex flex-wrap gap-4">
+        <Button href="/donate" variant="gold" size="lg" className="rounded-full px-8">
+          Support Now
+        </Button>
+
+        <Button
+          href="#details"
+          variant="outline"
+          size="lg"
+          className="rounded-full px-8 border-white text-white hover:bg-white hover:text-background-dark"
+        >
+          Learn More
+        </Button>
+      </div>
+    </motion.div>
+  </Container>
+</section>
 
       <section id="details" className="py-20 bg-white dark:bg-dark-300">
         <Container>

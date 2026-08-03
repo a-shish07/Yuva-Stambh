@@ -248,23 +248,28 @@ export const campaignItems = [
     },
   },
   {
-    slug: 'e-shiksha-project',
-    href: '/campaigns/e-shiksha-project',
-    title: 'E-Shiksha Project',
-    subtitle: 'Digital empowerment and career readiness',
-    description:
-      'E-Shiksha provides free computer education to underprivileged children, bringing confidence, digital literacy, and future employment opportunities.',
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1400',
-    icon: 'Laptop',
-    impact: '200 children trained, 120+ provided employment',
-    goals: [
-      'Basic computer skills and Tally ERP training',
-      'Web designing and digital literacy',
-      'Career readiness and economic upliftment',
-    ],
-    progress: 92,
-    details: {
-      training_includes: 'Basic computer skills, Tally ERP, Web designing',
-    },
+  slug: 'e-shiksha-project',
+  href: '/campaigns/e-shiksha-project',
+  title: 'E-Shiksha Project',
+  subtitle: 'Digital empowerment and career readiness',
+  description:
+    'E-Shiksha provides free computer education to underprivileged children, bringing confidence, digital literacy, and future employment opportunities.',
+
+  // Remove image
+  // image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1400',
+
+  video: 'https://www.youtube.com/embed/KnT58DYQvbg?si=eh3E4zEQiOd31DHp&autoplay=1&mute=1&loop=1&playlist=KnT58DYQvbg&controls=0&showinfo=0&rel=0',
+
+  icon: 'Laptop',
+  impact: '200 children trained, 120+ provided employment',
+  goals: [
+    'Basic computer skills and Tally ERP training',
+    'Web designing and digital literacy',
+    'Career readiness and economic upliftment',
+  ],
+  progress: 92,
+  details: {
+    training_includes: 'Basic computer skills, Tally ERP, Web designing',
   },
+}
 ] as const;
