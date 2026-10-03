@@ -41,31 +41,31 @@ export async function POST(req: Request) {
       `,
     });
 
+//     if (error) {
+//   console.error('Resend error:', error);
+
+//   const errorMessage =
+//     typeof error === 'string'
+//       ? error
+//       : error.message || error.name || 'Failed to send email';
+
+//   return NextResponse.json(
+//     { error: errorMessage },
+//     { status: 500 }
+//   );
+// }
+
     if (error) {
-  console.error('Resend error:', error);
+      console.error('Resend error:', error);
+      return NextResponse.json({ error }, { status: 500 });
+    }
 
-  const errorMessage =
-    typeof error === 'string'
-      ? error
-      : error.message || error.name || 'Failed to send email';
-
-  return NextResponse.json(
-    { error: errorMessage },
-    { status: 500 }
-  );
-}
-
-  //   if (error) {
-  //     console.error('Resend error:', error);
-  //     return NextResponse.json({ error }, { status: 500 });
-  //   }
-
-  //   return NextResponse.json({ success: true, data });
-  // } catch (error) {
-  //   console.error('API Error:', error);
-  //   return NextResponse.json(
-  //     { error: 'Internal server error' },
-  //     { status: 500 }
-  //   );
-  // }
+    return NextResponse.json({ success: true, data });
+  } catch (error) {
+    console.error('API Error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
 }
